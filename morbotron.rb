@@ -38,9 +38,8 @@ def send_MMS
       from: '+12345678901' # Replace with your Twilio number
     )
     puts "Message sent!"
-  rescue TwilioRestException
-    # If an error occurs, print it out.
-    $stderr.print "Message failed to send: " + $!
+  rescue Twilio::REST::RequestError => e
+    puts e.message
   end
 end
 
