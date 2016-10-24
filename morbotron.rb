@@ -10,7 +10,7 @@ auth_token = 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY' # Your Auth Token from www.twili
 # Set up our scheduler.
 scheduler = Rufus::Scheduler.new
 
-def get_quote()
+def get_quote
   r = HTTParty.get('https://morbotron.com/api/random')
   # Check if our request had a valid response.
   if r.code == 200
